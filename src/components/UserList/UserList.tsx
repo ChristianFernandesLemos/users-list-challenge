@@ -3,13 +3,14 @@ import { UserCard } from '../UserCard/UserCard'
 
 interface UserListProps {
   users: User[]
+  onSelect: (user: User) => void
 }
 
-export function UserList({ users }: UserListProps) {
+export function UserList({ users, onSelect }: UserListProps) {
   return (
     <ul>
       {users.map((user) => (
-        <UserCard key={user.id} user={user} />
+        <UserCard key={user.id} user={user} onSelect={onSelect} />
       ))}
     </ul>
   )
