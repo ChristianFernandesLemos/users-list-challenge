@@ -32,7 +32,7 @@ Certifique-se de ter o **Node.js** instalado em sua máquina.
 
 2. **Acesse a pasta do projeto:**
    ```bash
-   cd seu-repositorio
+   cd users-list-challenge
    ```
 
 3. **Instale as dependências:**
