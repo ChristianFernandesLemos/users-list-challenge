@@ -1,3 +1,16 @@
+:root {
+  --color-bg: #f5f7fa;
+  --color-surface: #ffffff;
+  --color-text: #1f2937;
+  --color-muted: #4b5563;
+  --color-border: #d1d5db;
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-danger: #b91c1c;
+  --color-danger-bg: #fef2f2;
+  --radius: 8px;
+}
+
 *,
 *::before,
 *::after {
@@ -6,5 +19,21 @@
 
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
 }

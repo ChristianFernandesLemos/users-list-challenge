@@ -1,3 +1,5 @@
+import styles from './ErrorMessage.module.css'
+
 interface ErrorMessageProps {
   message: string
   onRetry: () => void
@@ -5,9 +7,9 @@ interface ErrorMessageProps {
 
 export function ErrorMessage({ message, onRetry }: ErrorMessageProps) {
   return (
-    <div role="alert">
-      <p>{message}</p>
-      <button type="button" onClick={onRetry}>
+    <div className={styles.error} role="alert">
+      <p className={styles.message}>{message}</p>
+      <button className={styles.retry} type="button" onClick={onRetry}>
         Tentar novamente
       </button>
     </div>

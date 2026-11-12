@@ -7,6 +7,7 @@ import { UserList } from './components/UserList/UserList'
 import { useUsers } from './hooks/useUsers'
 import type { User } from './types/user'
 import { filterUsersByName } from './utils/filterUsers'
+import styles from './App.module.css'
 
 function App() {
   const { users, loading, error, retry } = useUsers()
@@ -17,14 +18,14 @@ function App() {
   const total = filteredUsers.length
 
   return (
-    <main>
-      <h1>Lista de Usuários</h1>
+    <main className={styles.container}>
+      <h1 className={styles.title}>Lista de Usuários</h1>
       {loading && <Loading />}
       {error && <ErrorMessage message={error} onRetry={retry} />}
       {!loading && !error && (
         <>
           <SearchInput value={search} onChange={setSearch} />
-          <p aria-live="polite">
+          <p className={styles.count} aria-live="polite">
             {total === 0
               ? 'Nenhum usuário encontrado.'
               : `${total} ${total === 1 ? 'usuário encontrado' : 'usuários encontrados'}`}

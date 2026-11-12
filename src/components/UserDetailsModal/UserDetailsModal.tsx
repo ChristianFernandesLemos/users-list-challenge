@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef } from 'react'
 import type { User } from '../../types/user'
+import styles from './UserDetailsModal.module.css'
 
 interface UserDetailsModalProps {
   user: User
@@ -21,6 +22,7 @@ export function UserDetailsModal({ user, onClose }: UserDetailsModalProps) {
 
   return (
     <dialog
+      className={styles.dialog}
       ref={dialogRef}
       aria-labelledby={titleId}
       onClose={onClose}
@@ -28,9 +30,11 @@ export function UserDetailsModal({ user, onClose }: UserDetailsModalProps) {
         if (event.target === event.currentTarget) closeDialog()
       }}
     >
-      <div>
-        <h2 id={titleId}>{user.name}</h2>
-        <dl>
+      <div className={styles.content}>
+        <h2 className={styles.title} id={titleId}>
+          {user.name}
+        </h2>
+        <dl className={styles.details}>
           <dt>Email</dt>
           <dd>{user.email}</dd>
           <dt>Telefone</dt>
@@ -40,7 +44,7 @@ export function UserDetailsModal({ user, onClose }: UserDetailsModalProps) {
           <dt>Cidade</dt>
           <dd>{user.address.city}</dd>
         </dl>
-        <button type="button" onClick={closeDialog}>
+        <button className={styles.close} type="button" onClick={closeDialog}>
           Fechar
         </button>
       </div>
