@@ -1,5 +1,6 @@
 import type { User } from '../../types/user'
 import { UserCard } from '../UserCard/UserCard'
+import styles from './UserList.module.css'
 
 interface UserListProps {
   users: User[]
@@ -8,7 +9,7 @@ interface UserListProps {
 
 export function UserList({ users, onSelect }: UserListProps) {
   return (
-    <ul>
+    <ul className={styles.list}>
       {users.map((user) => (
         <UserCard key={user.id} user={user} onSelect={onSelect} />
       ))}

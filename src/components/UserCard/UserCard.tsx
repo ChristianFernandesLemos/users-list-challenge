@@ -1,4 +1,5 @@
 import type { User } from '../../types/user'
+import styles from './UserCard.module.css'
 
 interface UserCardProps {
   user: User
@@ -8,9 +9,13 @@ interface UserCardProps {
 export function UserCard({ user, onSelect }: UserCardProps) {
   return (
     <li>
-      <button type="button" onClick={() => onSelect(user)}>
+      <button
+        className={styles.card}
+        type="button"
+        onClick={() => onSelect(user)}
+      >
         <strong>{user.name}</strong>
-        <span>{user.email}</span>
+        <span className={styles.email}>{user.email}</span>
       </button>
     </li>
   )
