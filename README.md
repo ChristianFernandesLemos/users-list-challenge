@@ -1,4 +1,4 @@
-# users-list-challengeo – Desenvolvedor Front-End Júnior
+# users-list-challenge – Desenvolvedor Front-End Júnior
 
 Aplicação web desenvolvida com **React**, **Vite** e **TypeScript** para listagem, filtragem e visualização de detalhes de usuários consumindo a API pública [JSONPlaceholder](https://typicode.com).
 
