@@ -50,7 +50,7 @@ Certifique-se de ter o **Node.js** instalado em sua máquina.
 ## Estrutura de Pastas
 
 ```text
-src/
+src/               # Recursos estáticos da aplicação
 ├── components/
 │   ├── ErrorMessage/      # Componente de exibição de erro e botão de retry
 │   ├── Loading/           # Indicador visual de carregamento
@@ -58,8 +58,13 @@ src/
 │   ├── UserCard/          # Cartão individual de usuário na lista
 │   ├── UserDetailsModal/  # Modal com informações detalhadas do usuário
 │   └── UserList/          # Grid responsivo da lista de usuários
-├── types/                 # Interfaces e tipagens TypeScript da API
-├── App.tsx                # Componente principal e gerenciamento de estado
+├── hooks/                 # Custom hooks para gerenciamento de estado e lógica
+├── services/              # Comunicação e requisições com a API externa
+├── types/                 # Interfaces e tipagens TypeScript
+├── utils/                 # Funções auxiliares e utilitárias
+├── App.module.css         # Estilos com escopo local do componente principal
+├── App.tsx                # Componente principal da aplicação
+├── index.css              # Estilos globais e variáveis CSS
 └── main.tsx               # Ponto de entrada da aplicação
 ```
 
