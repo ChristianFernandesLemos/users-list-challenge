@@ -1,4 +1,5 @@
 import { useId } from 'react'
+import styles from './SearchInput.module.css'
 
 interface SearchInputProps {
   value: string
@@ -9,9 +10,12 @@ export function SearchInput({ value, onChange }: SearchInputProps) {
   const inputId = useId()
 
   return (
-    <div>
-      <label htmlFor={inputId}>Buscar por nome</label>
+    <div className={styles.field}>
+      <label className={styles.label} htmlFor={inputId}>
+        Buscar por nome
+      </label>
       <input
+        className={styles.input}
         id={inputId}
         type="search"
         value={value}
